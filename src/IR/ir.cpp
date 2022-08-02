@@ -1,4 +1,4 @@
 #include <string>
-#include "ir.hpp"
+#include <fstream>
 
 std::ofstream f_ir;

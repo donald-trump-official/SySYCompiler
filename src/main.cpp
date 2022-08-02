@@ -7,7 +7,7 @@
 #include <list>
 #include "parser.hpp"
 #include "ast.hpp"
-#include "ir.hpp"
+// #include "ir.hpp"
 
 using namespace std;
 

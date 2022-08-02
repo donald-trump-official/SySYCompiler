@@ -27,7 +27,8 @@ add_custom_command(
 )
 
 # 添加引用目录
-include_directories(${CMAKE_SOURCE_DIR}/include)
+include_directories(${CMAKE_SOURCE_DIR}/include/AST)
+include_directories(${CMAKE_SOURCE_DIR}/include/IR)
 include_directories(${CMAKE_SOURCE_DIR}/build)
 
 # 添加源码
