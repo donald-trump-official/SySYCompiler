@@ -25,3 +25,5 @@ void FuncDefNode::print(int level){
 	std::cout<<std::endl;
 	sons[3]->print(level + 1);
 }
+
+std::string FuncDefNode::

@@ -20,11 +20,12 @@ public:
 	AstNode(const char *str);
 	void add_son(const char *str);
 	void add_son(AstNode *son_node);
-	std::string& get_text();
+	std::string& get_text(); // deprecated
 	std::vector<AstNode*> get_sons();
-	static void pre_trversal(AstNode *root, int level);
+	static void pre_trversal(AstNode *root, int level); // deprecated
 	virtual std::string to_string();
 	virtual void print(int level);
+	virtual std::string gen_ir() = 0;
 };
 
 class FuncDefNode:public AstNode{
@@ -32,6 +33,7 @@ public:
 	FuncDefNode(const char *str):AstNode(str){};
 	void print(int level) override;
 	// std::string to_string() override final;
+	virtual std::string gen_ir() override;
 };
 
 class DeclNode:public AstNode{
@@ -43,6 +45,7 @@ public:
 	std::string to_string() override;
 	void set_const_decl(bool cst);
 	bool is_const_decl();
+	virtual std::string gen_ir() override;
 };
 
 class DefListNode:public AstNode{
@@ -50,6 +53,7 @@ public:
 	DefListNode(const char *str):AstNode(str){};
 	void print(int level) override;
 	std::string to_string() override;
+	virtual std::string gen_ir() override;
 };
 
 class DefNode:public AstNode{
@@ -57,18 +61,21 @@ public:
 	DefNode(const char *str):AstNode(str){};
 	void print(int level) override;
 	std::string to_string() override;
+	virtual std::string gen_ir() override;
 };
 
 class InitValListNode:public AstNode{
 public:
 	InitValListNode(const char *str):AstNode(str){};
 	std::string to_string() override;
+	virtual std::string gen_ir() override;
 };
 
 class InitValNode:public AstNode{
 public:
 	InitValNode(const char *str):AstNode(str){};
 	std::string to_string() override;
+	virtual std::string gen_ir() override;
 };
 
 class DimListNode:public AstNode{
@@ -76,12 +83,14 @@ public:
 	DimListNode(const char *str):AstNode(str){};
 	void print(int level) override;
 	std::string to_string() override;
+	virtual std::string gen_ir() override;
 };
 
 class DimNode:public AstNode{
 public:
 	DimNode(const char *str):AstNode(str){};
 	std::string to_string() override;
+	virtual std::string gen_ir() override;
 };
 
 class BlockNode:public AstNode{
@@ -89,6 +98,7 @@ public:
 	BlockNode(const char *str):AstNode(str){};
 	void print(int level) override;
 	std::string to_string() override;
+	virtual std::string gen_ir() override;
 };
 
 class StmtNode:public AstNode{
@@ -100,6 +110,7 @@ public:
 	std::string to_string() override;
 	void set_type(StmtType t);
 	StmtType get_type();
+	virtual std::string gen_ir() override;
 };
 
 class ExpNode:public AstNode{
@@ -107,6 +118,7 @@ public:
 	ExpNode(const char *str):AstNode(str){};
 	void print(int level) override;
 	std::string to_string() override;
+	virtual std::string gen_ir() override;
 };
 
 class PrimaryExpNode:public AstNode{
@@ -114,6 +126,7 @@ public:
 	PrimaryExpNode(const char *str):AstNode(str){};
 	void print(int level) override;
 	std::string to_string() override;
+	virtual std::string gen_ir() override;
 };
 
 class LValNode:public AstNode{
@@ -121,6 +134,7 @@ public:
 	LValNode(const char *str):AstNode(str){};
 	void print(int level) override;
 	std::string to_string() override;
+	virtual std::string gen_ir() override;
 };
 
 class CallFuncNode:public AstNode{
@@ -128,6 +142,7 @@ public:
 	CallFuncNode(const char *str):AstNode(str){};
 	void print(int level) override;
 	std::string to_string() override;
+	virtual std::string gen_ir() override;
 };
 
 class OpNode:public AstNode{
@@ -138,6 +153,7 @@ public:
 	OpNode(AstOpType t):_type(t){};
 	void set_op(AstOpType t);
 	std::string to_string() override;
+	virtual std::string gen_ir() override;
 };
 
 class NumberNode:public AstNode{
@@ -154,6 +170,7 @@ public:
 	int get_int(){return val.int_val;}
 	double get_float(){return val.float_val;}
 	std::string to_string() override;
+	virtual std::string gen_ir() override;
 };
 
 class TypeNode:public AstNode{
@@ -165,6 +182,7 @@ public:
 	void set_type(AstDataType t){_type = t;}
 	AstDataType get_type(){return _type;}
 	std::string to_string() override;
+	virtual std::string gen_ir() override;
 };
 
 extern AstNode* ast_root;

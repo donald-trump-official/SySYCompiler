@@ -1,0 +1,4 @@
+# Hashes of file build rules.
+3ee99928b6f4d5e79938081515037ba1 CMakeFiles/test
+81c3544250bc12cae337b4e73a305717 lexer.cpp
+e3cab98b8786bb50069021a699c717b9 parser.cpp

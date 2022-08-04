@@ -63,3 +63,8 @@ std::string AstNode::to_string(){
 	return *text;
 }
 
+std::string AstNode::gen_ir(){
+	std::string text = "[text]";
+	return text;
+}
+
