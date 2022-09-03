@@ -1,4 +1,0 @@
-/mnt/c/Users/CMBGZ/Documents/SySYCompiler/build/CMakeFiles/rebuild_cache.dir
-/mnt/c/Users/CMBGZ/Documents/SySYCompiler/build/CMakeFiles/edit_cache.dir
-/mnt/c/Users/CMBGZ/Documents/SySYCompiler/build/CMakeFiles/test.dir
-/mnt/c/Users/CMBGZ/Documents/SySYCompiler/build/CMakeFiles/compiler.dir
